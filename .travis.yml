@@ -6,10 +6,10 @@ services:
 cache:
   directories:
   - .cache
-branches:
-  only:
-    - /^20.*$/
-    - master
+# branches:
+#  only:
+#     - /^20.*$/
+#     - master
 
 # Travis CI build matrix.  Each entry below will trigger an extra, parallel build on Travis.
 matrix:
