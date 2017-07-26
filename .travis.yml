@@ -14,21 +14,21 @@ branches:
 # Travis CI build matrix.  Each entry below will trigger an extra, parallel build on Travis.
 matrix:
   include:
-  - os: linux
-    env:
-     - LABEL="amd64_linux"
-     - ARCH="amd64"
-     - RPM_ARCH="x86_64"
-  - os: linux
-    env:
-     - LABEL="armhf_linux"
-     - ARCH="armhf"
-     - RPM_ARCH="armhf"
   # - os: linux
   #   env:
-  #   - LABEL="arm64_linux"
-  #   - ARCH="arm64"
-  #   - RPM_ARCH="aarch64"
+  #    - LABEL="amd64_linux"
+  #    - ARCH="amd64"
+  #    - RPM_ARCH="x86_64"
+  # - os: linux
+  #   env:
+  #    - LABEL="armhf_linux"
+  #    - ARCH="armhf"
+  #    - RPM_ARCH="armhf"
+   - os: linux
+     env:
+     - LABEL="arm64_linux"
+     - ARCH="arm64"
+     - RPM_ARCH="aarch64"
     
 notifications:
   email: false
@@ -48,9 +48,9 @@ script:
     # fi;
   
   
-after_success:
-  - package_cloud push headmelted/codebuilds/ubuntu/xenial ./.builds/${LABEL}/.vscode/.build/linux/deb/${ARCH}/deb/*.deb
-  - package_cloud push headmelted/codebuilds/fedora/24 ./.builds/${LABEL}/.vscode/.build/linux/rpm/${RPM_ARCH}/*.rpm
+# after_success:
+#   - package_cloud push headmelted/codebuilds/ubuntu/xenial ./.builds/${LABEL}/.vscode/.build/linux/deb/${ARCH}/deb/*.deb
+#   - package_cloud push headmelted/codebuilds/fedora/24 ./.builds/${LABEL}/.vscode/.build/linux/rpm/${RPM_ARCH}/*.rpm
 
 deploy:
   provider: releases
