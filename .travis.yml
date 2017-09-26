@@ -14,22 +14,24 @@ cache:
 # Travis CI build matrix.  Each entry below will trigger an extra, parallel build on Travis.
 matrix:
   include:
-  - os: linux
-    env:
-     - LABEL="amd64_linux"
-     - ARCH="amd64"
-     - RPM_ARCH="x86_64"
-  - os: linux
-    env:
-     - LABEL="armhf_linux"
-     - ARCH="armhf"
-     - RPM_ARCH="armhf"
-     - VSCODE_ELECTRON_PLATFORM="arm"
   # - os: linux
   #   env:
-  #   - LABEL="arm64_linux"
-  #   - ARCH="arm64"
-  #    - RPM_ARCH="aarch64"
+  #    - LABEL="amd64_linux"
+  #    - ARCH="amd64"
+    #  - RPM_ARCH="x86_64"
+  # - os: linux
+  #   env:
+  #    - LABEL="armhf_linux"
+  #    - ARCH="armhf"
+  #    - RPM_ARCH="armhf"
+  #    - VSCODE_ELECTRON_PLATFORM="arm"
+  - os: linux
+    env:
+    - LABEL="arm64_linux"
+    - ARCH="arm64"
+     - RPM_ARCH="aarch64"
+     - VSCODE_ELECTRON_PLATFORM="arm64"
+     
     
 notifications:
   email: false
