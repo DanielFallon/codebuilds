@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e;
 
+echo "VS Code electron platform: $VSCODE_ELECTRON_PLATFORM";
+
 echo "Running npm install for ${NPM_ARCH}";
 ./scripts/npm.sh install --arch=${NPM_ARCH} --unsafe-perm;
 
